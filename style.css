@@ -1,0 +1,146 @@
+:root {
+  --bg-top: #dff7f5;
+  --bg-bottom: #b9ece8;
+  --panel: rgba(255, 255, 255, 0.82);
+  --panel-border: rgba(21, 115, 119, 0.18);
+  --text-main: #12383b;
+  --text-sub: #426b6d;
+  --accent: #118a8d;
+  --accent-strong: #0c6d70;
+  --shadow: 0 24px 60px rgba(17, 91, 94, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Noto Sans KR", sans-serif;
+  color: var(--text-main);
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.65), transparent 28%),
+    linear-gradient(160deg, var(--bg-top), var(--bg-bottom));
+}
+
+.app {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px 18px;
+}
+
+.card {
+  width: min(100%, 620px);
+  padding: 32px;
+  border: 1px solid var(--panel-border);
+  border-radius: 28px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--accent-strong);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  line-height: 1.2;
+}
+
+.intro {
+  margin: 14px 0 28px;
+  color: var(--text-sub);
+  line-height: 1.7;
+}
+
+.calculator {
+  display: grid;
+  gap: 18px;
+}
+
+.field {
+  display: grid;
+  gap: 10px;
+}
+
+.field span {
+  font-weight: 700;
+}
+
+.field input {
+  width: 100%;
+  padding: 16px 18px;
+  border: 1px solid rgba(17, 138, 141, 0.2);
+  border-radius: 16px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.96);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(17, 138, 141, 0.15);
+  transform: translateY(-1px);
+}
+
+.result {
+  margin-top: 24px;
+  padding: 24px;
+  border-radius: 22px;
+  background: linear-gradient(145deg, rgba(17, 138, 141, 0.12), rgba(255, 255, 255, 0.88));
+}
+
+.result-label {
+  margin: 0 0 10px;
+  font-weight: 700;
+  color: var(--accent-strong);
+}
+
+#result-value {
+  display: block;
+  font-size: clamp(2rem, 7vw, 3.4rem);
+  line-height: 1;
+}
+
+.result-detail {
+  margin: 12px 0 0;
+  color: var(--text-sub);
+}
+
+.formula {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(18, 56, 59, 0.1);
+}
+
+.formula h2 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+}
+
+.formula p {
+  margin: 0;
+  color: var(--text-sub);
+  line-height: 1.7;
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 24px 18px;
+    border-radius: 22px;
+  }
+
+  .result {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>아이템 확률 계산기</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="card">
+      <p class="eyebrow">🎯 확률 계산 도구</p>
+      <h1>🧮 아이템 실제 확률 계산기</h1>
+      <p class="intro">
+        특정 그룹 확률과 그 안의 아이템 확률을 입력하면 최종 획득 확률을 바로 계산합니다.
+      </p>
+
+      <form class="calculator" id="probability-form">
+        <label class="field">
+          <span>📦 그룹 확률 (%)</span>
+          <input
+            id="group-probability"
+            name="groupProbability"
+            type="number"
+            min="0"
+            max="100"
+            step="0.01"
+            placeholder="예: 20"
+            value="20"
+          >
+        </label>
+
+        <label class="field">
+          <span>✨ 아이템 확률 (%)</span>
+          <input
+            id="item-probability"
+            name="itemProbability"
+            type="number"
+            min="0"
+            max="100"
+            step="0.00001"
+            placeholder="예: 10"
+            value="10"
+          >
+        </label>
+      </form>
+
+      <section class="result" aria-live="polite">
+        <p class="result-label">📊 실제 확률</p>
+        <strong id="result-value">2.00%</strong>
+        <p id="result-detail" class="result-detail">
+          20% × 10% = 2.00%
+        </p>
+      </section>
+
+      <section class="formula">
+        <h2>📝 계산 방식</h2>
+        <p>실제 확률 = (그룹 확률 ÷ 100) × (아이템 확률 ÷ 100) × 100</p>
+      </section>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
